@@ -34,10 +34,12 @@ app.get("/", (req, res) => {
 //     }
 // });
 
-// Route import
+// Router import
 const expenseRouter = require("./routes/expenses");
-
 app.use("/expenses", expenseRouter);
+
+const registerRouter = require("./routes/register");
+app.use("/register", registerRouter);
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
